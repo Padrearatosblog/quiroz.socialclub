@@ -32,6 +32,16 @@ body.is-locked {
   overflow: hidden;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -126,10 +136,10 @@ button {
 }
 
 .hero__content {
-  align-self: center;
+  align-self: end;
   justify-self: center;
   width: min(100%, 760px);
-  padding: 7vh 0 11vh;
+  padding: 0 0 8.5vh;
   text-align: center;
 }
 
@@ -162,10 +172,11 @@ h2 {
 
 .hero__claim {
   width: min(100%, 560px);
-  margin: 1rem auto 0;
+  margin: 0 auto;
   color: var(--ivory);
-  font-size: clamp(1rem, 4.4vw, 1.45rem);
-  font-weight: 400;
+  font-size: clamp(1.15rem, 5vw, 1.75rem);
+  font-weight: 500;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.8);
 }
 
 .hero__actions,
@@ -591,11 +602,6 @@ h2 {
     margin-left: auto;
   }
 
-  .hero__proof {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .gallery__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -668,8 +674,22 @@ h2 {
 }
 
 @media (max-width: 559px) {
+  .hero__media {
+    background-color: var(--black);
+    background-position: center 4.6rem;
+    background-repeat: no-repeat;
+    background-size: 148vw auto;
+    transform: none;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(11, 11, 11, 0.26), rgba(11, 11, 11, 0.2) 28%, rgba(11, 11, 11, 0.78) 58%, rgba(11, 11, 11, 0.96)),
+      radial-gradient(circle at center top, rgba(200, 169, 107, 0.12), transparent 28rem);
+  }
+
   .hero__content {
-    padding: 3vh 0 8vh;
+    padding: 0 0 8vh;
   }
 
   .lightbox__image {
